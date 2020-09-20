@@ -28,7 +28,7 @@
       >Login</a>
     </nav>
     <router-view></router-view>
-    <div class="modal fade" id="login" tabindex="-1" role="dialog">
+     <div class="modal fade" id="login" tabindex="-1" role="dialog">
       <div id="alert" class="alert alert-danger" role="alert" style="display:none">กรุณาใส่ Username</div>
       <div
         id="alert2"
@@ -52,7 +52,49 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-success" @click="checkForm()">Login</button>
-            <button type="button" class="btn btn-outline-primary">Register</button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              data-toggle="modal"
+              data-target="#regis"
+            >Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ...............................................................Modal Register............................................................................ -->
+    <div class="modal fade" id="regis" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="regisuser">Username สำหรับเข้าระบบ</label>
+            <input type="text" class="form-control" name="regisuser" />
+            <label for="regispass">รหัสผ่าน</label>
+            <input type="password" class="form-control" name="regispass" />
+            <label for="checkpass">ยืนยันรหัสผ่าน</label>
+            <input type="password" class="form-control" name="checkpass" />
+            <label for="fullname">ชื่อ</label>
+            <input type="text" class="form-control" name="fullname" />
+            <label for="lastname">นามสกุล</label>
+            <input type="text" class="form-control" name="lastname" />
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male" style="margin-left:5px">ชาย</label>
+            <input type="radio" id="female" name="gender" value="female" style="margin-left:10px" />
+            <label for="female" style="margin-left:5px">หญิง</label> <br>
+            <label for="phonenum">เบอร์โทรศัพท์มือถือ</label>
+            <input type="text" class="form-control" name="phonenum" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success">Register</button>
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Clear</button>
           </div>
         </div>
       </div>
